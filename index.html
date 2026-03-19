@@ -18,6 +18,7 @@
   --purple-dim: rgba(87,68,154,0.15);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; max-width: 100%; }
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--white); font-family: 'Poppins', sans-serif; font-weight: 400; overflow-x: hidden; }
 h1, h2, h3, h4 { font-family: 'Kodchasan', sans-serif; font-weight: 700; }
@@ -242,21 +243,92 @@ footer { background:var(--bg2); border-top:1px solid rgba(217,215,239,0.06); pad
 .csne-vs { font-family:"Kodchasan",sans-serif; font-weight:700; font-size:22px; color:var(--lav); opacity:0.3; text-align:center; }
 
 @media (max-width:768px) {
-  html, body { overflow-x: hidden; }
-  .hero { padding: 120px 24px 80px; }
-  section { padding: 72px 24px; overflow-x: hidden; }
-  .stats-strip { padding: 40px 24px; overflow-x: hidden; }
-  .hero h1 { font-size: clamp(36px, 8vw, 60px); }
-  .csne-title { font-size: clamp(36px, 10vw, 56px); }
-  .section-title { font-size: clamp(28px, 7vw, 44px); }
-  .problem-num { font-size: 48px; }
-  .stat-num { font-size: 40px; }
-  .csvs-new, .csne-grid { grid-template-columns: 1fr; gap: 16px; }
-  .csvs-arrow-new, .csne-vs { display: none; }
-  .hero-orb1, .hero-orb2 { display: none; }
-  .result-val { font-size: 32px; }
-  .quemsomos-num { font-size: 40px; }
+  /* Overflow global fix */
+  html, body { overflow-x: hidden; max-width: 100vw; }
+  *, *::before, *::after { max-width: 100%; }
+
+  /* Nav */
   nav { padding: 16px 24px; }
+
+  /* Hero */
+  .hero { padding: 120px 24px 80px; }
+  .hero-orb1, .hero-orb2 { display: none; }
+  .hero h1 { font-size: clamp(32px, 8vw, 52px); }
+  .hero-sub { font-size: 16px; max-width: 100%; }
+  .hero-cta-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .btn-primary { font-size: 15px; padding: 16px 28px; }
+
+  /* Sections */
+  section { padding: 64px 24px; overflow-x: hidden; width: 100%; box-sizing: border-box; }
+
+  /* Stats strip */
+  .stats-strip { grid-template-columns: repeat(2, 1fr); padding: 40px 24px; gap: 24px; overflow-x: hidden; width: 100%; box-sizing: border-box; }
+  .stat-num { font-size: 36px; }
+  .stat-label { font-size: 12px; }
+
+  /* Section typography */
+  .section-title { font-size: clamp(26px, 7vw, 40px); max-width: 100%; }
+  .section-sub { font-size: 16px; max-width: 100%; }
+
+  /* Problem grid */
+  .problem-grid { grid-template-columns: 1fr; max-width: 100%; margin: 0; }
+  .problem-num { font-size: 52px; }
+
+  /* Contrast lines */
+  .contrast-line { padding-left: 16px; }
+  .contrast-muted, .contrast-strong { font-size: clamp(20px, 5vw, 32px); }
+
+  /* Steps */
+  .steps { grid-template-columns: 1fr; }
+
+  /* CS ne suporte */
+  .csne-title { font-size: clamp(32px, 9vw, 52px); margin-bottom: 32px; }
+  .csne-grid { grid-template-columns: 1fr; gap: 16px; max-width: 100%; }
+  .csne-vs { display: none; }
+  .csne-card { padding: 24px 20px; }
+
+  /* Onde a maioria */
+  .csvs-new { grid-template-columns: 1fr; gap: 16px; max-width: 100%; }
+  .csvs-arrow-new { display: none; }
+  .csvs-card-new { padding: 24px 20px; }
+
+  /* Results */
+  .results-grid { grid-template-columns: 1fr; }
+  .result-val { font-size: 32px; }
+  .result-single { font-size: 44px; }
+
+  /* NPS */
+  .nps-block { padding: 28px 20px; max-width: 100%; }
+  .nps-quote { font-size: 17px; }
+  .nps-block::before { display: none; }
+
+  /* Tools */
+  .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .tools-integrations { font-size: 12px; padding: 16px; }
+
+  /* Clients */
+  .clients-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .client-name { font-size: 13px; }
+  .client-followers { font-size: 11px; }
+  .client-niche { font-size: 11px; }
+
+  /* Objections */
+  .obj-list { max-width: 100%; }
+  .obj-item { padding: 20px 18px; }
+  .obj-q { font-size: 14px; }
+  .obj-a { font-size: 13px; }
+
+  /* Quem somos */
+  .quemsomos { padding: 64px 24px; }
+  .quemsomos-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .quemsomos-num { font-size: 40px; }
+  .quemsomos-title { font-size: clamp(32px, 8vw, 48px); }
+
+  /* CTA final */
+  .cta-final { padding: 72px 24px; }
+  .cta-orb { width: 300px; height: 300px; }
+
+  /* Footer */
   footer { flex-direction: column; gap: 12px; padding: 32px 24px; text-align: center; }
 }</style>
 </head>
