@@ -101,7 +101,7 @@ section { padding:100px 60px; }
 .step-desc { font-size:14px; color:var(--lav); line-height:1.7; opacity:0.8; }
 
 /* RESULTS */
-.results { background:var(--bg2); } .results .section-title, .results .section-sub, .results .section-tag { margin-left:auto; margin-right:auto; } .results .results-grid { text-align:left; }
+.problem .section-title, .problem .section-sub, .problem .section-tag { margin-left:auto; margin-right:auto; } .problem .problem-grid { text-align:left; margin-left:auto; margin-right:auto; } .results { background:var(--bg2); } .results .section-title, .results .section-sub, .results .section-tag { margin-left:auto; margin-right:auto; } .results .results-grid { text-align:left; }
 .results-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
 .result-card { background:var(--bg3); border:1px solid rgba(55,181,148,0.12); border-radius:16px; padding:36px; position:relative; }
 .result-card::after { content:''; position:absolute; top:0; right:0; width:60px; height:3px; background:var(--green); border-radius:0 16px 0 0; }
@@ -139,7 +139,7 @@ section { padding:100px 60px; }
 .nps-item::before { content:'→'; color:var(--green); flex-shrink:0; font-weight:600; }
 
 /* TOOLS */
-.tools { background:var(--bg); }
+.tools { background:var(--bg); } .tools .section-title, .tools .section-sub, .tools .section-tag { margin-left:auto; margin-right:auto; } .tools .tools-grid, .tools .tools-integrations { text-align:left; }
 .tools-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:32px; }
 .tool-card { background:var(--bg2); border:1px solid rgba(217,215,239,0.07); border-radius:14px; padding:28px 20px; text-align:center; transition:border-color 0.3s, transform 0.3s; }
 .tool-card:hover { border-color:rgba(55,181,148,0.3); transform:translateY(-3px); }
@@ -312,7 +312,7 @@ footer { background:var(--bg2); border-top:1px solid rgba(217,215,239,0.06); pad
 </div>
 
 <!-- PROBLEM -->
-<section class="problem">
+<section class="problem" style="text-align:center;">
   <div class="section-tag">O problema</div>
   <h2 class="section-title reveal">O mercado aprendeu a vender.<br><em>Esqueceu de entregar.</em></h2>
   <p class="section-sub reveal">Você domina ROI, ROAS e CAC. Mas qual é a sua taxa de recompra? Enquanto você busca novos leads, sua base de alunos está parada — sem resultado, sem recompra, sem indicação.</p>
@@ -510,7 +510,7 @@ footer { background:var(--bg2); border-top:1px solid rgba(217,215,239,0.06); pad
 <div class="divider-line"></div>
 
 <!-- TOOLS -->
-<section class="tools">
+<section class="tools" style="text-align:center;">
   <div class="section-tag">Infraestrutura completa</div>
   <h2 class="section-title reveal">Você não precisa<br>contratar, treinar ou<br><em>pagar nenhuma ferramenta.</em></h2>
   <p class="section-sub reveal">A Terceiriza CS chega com tudo pronto. O custo operacional é absorvido por nós.</p>
