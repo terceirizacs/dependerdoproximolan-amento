@@ -330,7 +330,15 @@ footer { background:var(--bg2); border-top:1px solid rgba(217,215,239,0.06); pad
 
   /* Footer */
   footer { flex-direction: column; gap: 12px; padding: 32px 24px; text-align: center; }
-}</style>
+}
+.cost-table { width:100%; border-collapse:collapse; margin:16px 0 20px; font-size:14px; }
+.cost-table td { padding:10px 12px; border-bottom:1px solid rgba(217,215,239,0.08); color:var(--lav); }
+.cost-table td:last-child { text-align:right; white-space:nowrap; color:var(--white); font-weight:500; }
+.cost-table tr:first-child td { border-top:1px solid rgba(217,215,239,0.08); }
+.cost-table tr.cost-total td { color:var(--green); font-weight:700; font-size:15px; border-bottom:none; border-top:2px solid rgba(55,181,148,0.3); }
+@media (max-width:768px) { .cost-table { font-size:12px; } .cost-table td { padding:8px 6px; } }
+
+</style>
 </head>
 <body>
 
@@ -709,7 +717,17 @@ footer { background:var(--bg2); border-top:1px solid rgba(217,215,239,0.06); pad
     </div>
     <div class="obj-item reveal">
       <div class="obj-q">Quanto custa contratar um time de CS internamente?</div>
-      <div class="obj-a">Entre R$20.000 e R$34.000 por mês contando salários, ferramentas e infraestrutura — sem garantia de resultado e com alto turnover. <strong>Com a Terceiriza CS, você terceiriza tudo isso com valores a partir de R$3.997/mês.</strong></div>
+      <div class="obj-a">Para montar um time interno você precisaria de:
+        <table class="cost-table">
+          <tr><td>Head de Operação</td><td>R$ 8.000 – R$ 12.000</td></tr>
+          <tr><td>Analista de CS</td><td>R$ 2.000 – R$ 5.000</td></tr>
+          <tr><td>Analista de Dados / Dashboards</td><td>R$ 4.000 – R$ 6.000</td></tr>
+          <tr><td>Especialista em Automação / CRM</td><td>R$ 5.000 – R$ 8.000</td></tr>
+          <tr><td>Custo operacional (disparos, CRM, servidor)</td><td>R$ 1.000 – R$ 3.000</td></tr>
+          <tr class="cost-total"><td>Total mínimo estimado</td><td>R$ 20.000 – R$ 34.000/mês</td></tr>
+        </table>
+        <strong>Com a Terceiriza CS, você terceiriza tudo isso com valores bem menores.</strong>
+      </div>
     </div>
     <div class="obj-item reveal">
       <div class="obj-q">Em quanto tempo começo a ver resultados?</div>
