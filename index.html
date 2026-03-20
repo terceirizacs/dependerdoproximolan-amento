@@ -338,6 +338,81 @@ footer { background:var(--bg2); border-top:1px solid rgba(217,215,239,0.06); pad
 .cost-table tr.cost-total td { color:var(--green); font-weight:700; font-size:15px; border-bottom:none; border-top:2px solid rgba(55,181,148,0.3); }
 @media (max-width:768px) { .cost-table { font-size:12px; } .cost-table td { padding:8px 6px; } }
 
+
+/* DASHBOARD */
+.dashboard { background: var(--bg2); }
+.dash-block { background: var(--bg3); border: 1px solid rgba(217,215,239,0.08); border-radius: 20px; padding: 36px 40px; margin-bottom: 24px; }
+.dash-block:last-of-type { margin-bottom: 0; }
+.dash-header { display:flex; align-items:baseline; gap:16px; margin-bottom:28px; padding-bottom:16px; border-bottom:1px solid rgba(217,215,239,0.07); }
+.dash-tag { font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--green); }
+.dash-sub { font-size:12px; color:var(--lav); opacity:0.5; }
+.dash-content { display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:start; }
+.dash-content.single { grid-template-columns:1fr auto; gap:48px; align-items:center; }
+.dash-caption { font-size:13px; color:var(--lav); opacity:0.6; margin-top:24px; line-height:1.6; padding-top:16px; border-top:1px solid rgba(217,215,239,0.06); }
+
+/* Bar chart (funil) */
+.bar-chart { display:flex; align-items:flex-end; gap:12px; height:220px; padding-bottom:8px; }
+.bar-col { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; height:100%; justify-content:flex-end; }
+.bar-val { font-size:12px; font-weight:600; color:var(--white); }
+.bar { width:100%; border-radius:6px 6px 0 0; min-height:4px; transition:height 0.3s; }
+.bar-lbl { font-size:10px; color:var(--lav); opacity:0.6; text-align:center; line-height:1.3; margin-top:6px; }
+
+/* Detail rows (funil) */
+.detail-title { font-size:15px; font-weight:600; color:var(--white); margin-bottom:4px; }
+.detail-sub { font-size:11px; color:var(--lav); opacity:0.5; margin-bottom:16px; }
+.detail-rows { display:flex; flex-direction:column; gap:8px; }
+.detail-row { display:grid; grid-template-columns:180px 28px 1fr 44px; align-items:center; gap:8px; }
+.detail-row.highlight { background:rgba(55,181,148,0.05); border-radius:6px; padding:4px 6px; margin:0 -6px; }
+.detail-pill { font-size:11px; padding:3px 8px; border-radius:12px; white-space:nowrap; }
+.detail-count { font-size:12px; color:var(--lav); opacity:0.6; text-align:right; }
+.detail-bar-wrap { background:rgba(217,215,239,0.06); border-radius:4px; height:6px; }
+.detail-bar { height:6px; border-radius:4px; min-width:4px; }
+.detail-pct { font-size:12px; color:var(--lav); text-align:right; }
+
+/* Donut */
+.donut-label { font-size:15px; font-weight:600; color:var(--white); margin-bottom:2px; }
+.donut-sub { font-size:11px; color:var(--lav); opacity:0.5; margin-bottom:20px; }
+.donut-container { position:relative; width:180px; height:180px; margin:0 auto 16px; }
+.donut-svg { width:100%; height:100%; transform:rotate(-90deg); }
+.donut-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; }
+.donut-num { display:block; font-family:"Kodchasan",sans-serif; font-weight:700; font-size:28px; color:var(--green); line-height:1; }
+.donut-lbl { display:block; font-size:11px; color:var(--lav); opacity:0.6; margin-top:4px; }
+.donut-legend { display:flex; flex-direction:column; gap:6px; }
+.legend-item { display:flex; align-items:center; gap:8px; font-size:12px; color:var(--lav); opacity:0.7; }
+.legend-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+/* Inactivity bars */
+.inact-rows { display:flex; flex-direction:column; gap:10px; }
+.inact-row { display:grid; grid-template-columns:90px 1fr 48px; gap:10px; align-items:center; }
+.inact-label { font-size:12px; color:var(--lav); opacity:0.7; }
+.inact-bar-wrap { background:rgba(217,215,239,0.06); border-radius:4px; height:28px; }
+.inact-bar { height:28px; border-radius:4px; display:flex; align-items:center; padding-left:10px; font-size:12px; font-weight:600; color:#fff; min-width:28px; }
+.inact-pct { font-size:12px; color:var(--lav); text-align:right; }
+
+/* Progress bars */
+.prog-chart { display:flex; flex-direction:column; gap:8px; }
+.prog-bar-row { display:grid; grid-template-columns:60px 1fr; gap:12px; align-items:center; }
+.prog-lbl { font-size:12px; color:var(--lav); opacity:0.65; text-align:right; }
+.prog-bar-wrap { background:rgba(217,215,239,0.06); border-radius:4px; height:28px; }
+.prog-bar { height:28px; border-radius:4px; display:flex; align-items:center; padding-left:10px; font-size:11px; font-weight:600; color:#fff; min-width:36px; white-space:nowrap; }
+.prog-insight { text-align:center; padding:24px; background:rgba(55,181,148,0.07); border:1px solid rgba(55,181,148,0.2); border-radius:16px; }
+.prog-insight-num { font-family:"Kodchasan",sans-serif; font-weight:700; font-size:56px; color:var(--green); line-height:1; letter-spacing:-0.02em; }
+.prog-insight-lbl { font-size:15px; color:var(--white); margin:8px 0 12px; font-weight:600; line-height:1.3; }
+.prog-insight-action { font-size:13px; color:var(--lav); opacity:0.7; line-height:1.5; }
+
+@media (max-width:768px) {
+  .dash-block { padding:24px 20px; }
+  .dash-content, .dash-content.single { grid-template-columns:1fr; gap:28px; }
+  .bar-chart { height:160px; gap:6px; }
+  .bar-lbl { font-size:8px; }
+  .detail-row { grid-template-columns:140px 24px 1fr 36px; gap:4px; }
+  .detail-pill { font-size:10px; padding:2px 6px; }
+  .donut-container { width:140px; height:140px; }
+  .prog-bar-row { grid-template-columns:52px 1fr; }
+  .prog-insight-num { font-size:44px; }
+  .inact-row { grid-template-columns:80px 1fr 40px; }
+}
+
 </style>
 </head>
 <body>
@@ -459,6 +534,228 @@ footer { background:var(--bg2); border-top:1px solid rgba(217,215,239,0.06); pad
       <p class="step-desc">Aluno com resultado compra o próximo produto. Acompanhamos a jornada completa para transformar sua base em receita previsível.</p>
     </div>
   </div>
+</section>
+
+<div class="divider-line"></div>
+
+<!-- DASHBOARD -->
+<section class="dashboard">
+  <div class="section-tag">Dados em tempo real</div>
+  <h2 class="section-title reveal">Decisões baseadas em <em>dados reais</em><br>dos seus alunos.</h2>
+  <p class="section-sub reveal">A Terceiriza CS entrega dashboards completos para você acompanhar o progresso, o engajamento e a saúde da sua base — tudo atualizado em tempo real.</p>
+
+  <!-- DASH 1: Funil de Jornada -->
+  <div class="dash-block reveal">
+    <div class="dash-header">
+      <span class="dash-tag">Jornada da Aluna — Funil</span>
+      <span class="dash-sub">Classificação por progresso e acesso</span>
+    </div>
+    <div class="dash-content">
+      <div class="dash-bars-wrap">
+        <div class="bar-chart">
+          <div class="bar-col">
+            <div class="bar-val">0,4%</div>
+            <div class="bar" style="height:4%; background:#e05050;"></div>
+            <div class="bar-lbl">Nunca<br>acessou</div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-val">7,0%</div>
+            <div class="bar" style="height:18%; background:#e07830;"></div>
+            <div class="bar-lbl">Acessou<br>não consumiu</div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-val">11,9%</div>
+            <div class="bar" style="height:30%; background:#c09020;"></div>
+            <div class="bar-lbl">Consumiu<br>pouco</div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-val">25,1%</div>
+            <div class="bar" style="height:64%; background:#d04040;"></div>
+            <div class="bar-lbl">Desengajado</div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-val">16,5%</div>
+            <div class="bar" style="height:42%; background:#37B594;"></div>
+            <div class="bar-lbl">Engajado</div>
+          </div>
+          <div class="bar-col">
+            <div class="bar-val">39,1%</div>
+            <div class="bar" style="height:100%; background:#37B594;"></div>
+            <div class="bar-lbl">Recompra</div>
+          </div>
+        </div>
+      </div>
+      <div class="dash-detail">
+        <div class="detail-title">Detalhamento do Funil</div>
+        <div class="detail-sub">Quantidade e % por etapa</div>
+        <div class="detail-rows">
+          <div class="detail-row">
+            <span class="detail-pill" style="background:rgba(224,80,80,0.15);color:#e05050;">Nunca acessou</span>
+            <span class="detail-count">1</span>
+            <div class="detail-bar-wrap"><div class="detail-bar" style="width:1%;background:#e05050;"></div></div>
+            <span class="detail-pct">0,4%</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-pill" style="background:rgba(224,120,48,0.15);color:#e07830;">Acessou mas não consumiu</span>
+            <span class="detail-count">17</span>
+            <div class="detail-bar-wrap"><div class="detail-bar" style="width:18%;background:#e07830;"></div></div>
+            <span class="detail-pct">7,0%</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-pill" style="background:rgba(192,144,32,0.15);color:#c09020;">Consumiu pouco</span>
+            <span class="detail-count">29</span>
+            <div class="detail-bar-wrap"><div class="detail-bar" style="width:30%;background:#c09020;"></div></div>
+            <span class="detail-pct">11,9%</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-pill" style="background:rgba(208,64,64,0.15);color:#d04040;">Desengajado</span>
+            <span class="detail-count">61</span>
+            <div class="detail-bar-wrap"><div class="detail-bar" style="width:64%;background:#d04040;"></div></div>
+            <span class="detail-pct">25,1%</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-pill" style="background:rgba(55,181,148,0.15);color:#37B594;">Engajado</span>
+            <span class="detail-count">40</span>
+            <div class="detail-bar-wrap"><div class="detail-bar" style="width:42%;background:#37B594;"></div></div>
+            <span class="detail-pct">16,5%</span>
+          </div>
+          <div class="detail-row highlight">
+            <span class="detail-pill" style="background:rgba(55,181,148,0.25);color:#37B594;font-weight:700;">Recompra</span>
+            <span class="detail-count">95</span>
+            <div class="detail-bar-wrap"><div class="detail-bar" style="width:100%;background:#37B594;"></div></div>
+            <span class="detail-pct" style="color:#37B594;font-weight:700;">39,1%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="dash-caption">Mapeamos cada aluno no funil — de quem nunca acessou até quem já recomprou. Isso orienta cada ação do time de CS.</p>
+  </div>
+
+  <!-- DASH 2: Acesso à Plataforma -->
+  <div class="dash-block reveal">
+    <div class="dash-header">
+      <span class="dash-tag">Análise de Acesso</span>
+      <span class="dash-sub">Acessaram vs. nunca acessaram</span>
+    </div>
+    <div class="dash-content">
+      <div class="dash-donut-wrap">
+        <div class="donut-label">Acesso à Plataforma</div>
+        <div class="donut-sub">Acessaram vs nunca acessaram</div>
+        <div class="donut-container">
+          <svg viewBox="0 0 200 200" class="donut-svg">
+            <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(217,215,239,0.1)" stroke-width="24"/>
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#37B594" stroke-width="24"
+              stroke-dasharray="501 502" stroke-dashoffset="125" stroke-linecap="round"/>
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#e05050" stroke-width="24"
+              stroke-dasharray="3 502" stroke-dashoffset="-376" stroke-linecap="round"/>
+          </svg>
+          <div class="donut-center">
+            <span class="donut-num">99,6%</span>
+            <span class="donut-lbl">acessou</span>
+          </div>
+        </div>
+        <div class="donut-legend">
+          <div class="legend-item"><span class="legend-dot" style="background:#37B594;"></span> Acessou (242 — 99,6%)</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#e05050;"></span> Nunca (1 — 0,4%)</div>
+        </div>
+      </div>
+      <div class="dash-inact">
+        <div class="detail-title">Inatividade</div>
+        <div class="detail-sub">Dias desde último acesso</div>
+        <div class="inact-rows">
+          <div class="inact-row">
+            <span class="inact-label">0-14 dias</span>
+            <div class="inact-bar-wrap"><div class="inact-bar" style="width:51%;background:#37B594;">54</div></div>
+            <span class="inact-pct">22,2%</span>
+          </div>
+          <div class="inact-row">
+            <span class="inact-label">15-30 dias</span>
+            <div class="inact-bar-wrap"><div class="inact-bar" style="width:39%;background:#c09020;">41</div></div>
+            <span class="inact-pct">16,9%</span>
+          </div>
+          <div class="inact-row">
+            <span class="inact-label">31-60 dias</span>
+            <div class="inact-bar-wrap"><div class="inact-bar" style="width:39%;background:#e07830;">41</div></div>
+            <span class="inact-pct">16,9%</span>
+          </div>
+          <div class="inact-row">
+            <span class="inact-label">&gt;60 dias</span>
+            <div class="inact-bar-wrap"><div class="inact-bar" style="width:100%;background:#e05050;">106</div></div>
+            <span class="inact-pct">43,6%</span>
+          </div>
+          <div class="inact-row">
+            <span class="inact-label">Nunca acessou</span>
+            <div class="inact-bar-wrap"><div class="inact-bar" style="width:2%;background:#c050c0;">1</div></div>
+            <span class="inact-pct">0,4%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="dash-caption">Monitoramos quem acessou, quando acessou e por quanto tempo ficou inativo — para agir antes do abandono.</p>
+  </div>
+
+  <!-- DASH 3: Progresso Total -->
+  <div class="dash-block reveal">
+    <div class="dash-header">
+      <span class="dash-tag">Progresso Total do Produto</span>
+      <span class="dash-sub">Distribuição por faixa de conclusão (0 a 100%)</span>
+    </div>
+    <div class="dash-content single">
+      <div class="prog-chart">
+        <div class="prog-bar-row">
+          <span class="prog-lbl">0%</span>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:4.1%;background:#e05050;"><span>4,1%</span></div></div>
+        </div>
+        <div class="prog-bar-row">
+          <span class="prog-lbl">1–10%</span>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:15.6%;background:#c050a0;"><span>15,6%</span></div></div>
+        </div>
+        <div class="prog-bar-row highlight-row">
+          <span class="prog-lbl">11–20%</span>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:23.5%;background:#e07830;"><span>23,5%</span></div></div>
+        </div>
+        <div class="prog-bar-row">
+          <span class="prog-lbl">21–30%</span>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:18.5%;background:#c09020;"><span>18,5%</span></div></div>
+        </div>
+        <div class="prog-bar-row">
+          <span class="prog-lbl">31–40%</span>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:11.1%;background:#4090c0;"><span>11,1%</span></div></div>
+        </div>
+        <div class="prog-bar-row">
+          <span class="prog-lbl">41–50%</span>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:10.7%;background:#4090c0;"><span>10,7%</span></div></div>
+        </div>
+        <div class="prog-bar-row">
+          <span class="prog-lbl">51–60%</span>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:5.8%;background:#37B594;"><span>5,8%</span></div></div>
+        </div>
+        <div class="prog-bar-row">
+          <span class="prog-lbl">61–70%</span>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:6.2%;background:#37B594;"><span>6,2%</span></div></div>
+        </div>
+        <div class="prog-bar-row">
+          <span class="prog-lbl">71–80%</span>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:1.2%;background:#7060c0;"><span>1,2%</span></div></div>
+        </div>
+        <div class="prog-bar-row">
+          <span class="prog-lbl">81–90%</span>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:2.5%;background:#9080d0;"><span>2,5%</span></div></div>
+        </div>
+        <div class="prog-bar-row">
+          <span class="prog-lbl">91–100%</span>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:0.8%;background:#4090c0;"><span>0,8%</span></div></div>
+        </div>
+      </div>
+      <div class="prog-insight">
+        <div class="prog-insight-num">57,7%</div>
+        <div class="prog-insight-lbl">dos alunos travaram<br>antes dos 30%</div>
+        <div class="prog-insight-action">Identificamos onde a jornada quebra e agimos antes do abandono.</div>
+      </div>
+    </div>
+    <p class="dash-caption">Identificamos exatamente onde os alunos param — e intervimos com estratégia personalizada para cada faixa de progresso.</p>
+  </div>
+
 </section>
 
 <div class="divider-line"></div>
